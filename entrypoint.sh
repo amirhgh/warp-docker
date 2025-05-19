@@ -29,6 +29,7 @@ if [ ! -f /var/lib/cloudflare-warp/reg.json ]; then
     # if /var/lib/cloudflare-warp/mdm.xml not exists or REGISTER_WHEN_MDM_EXISTS not empty, register the warp client
     if [ ! -f /var/lib/cloudflare-warp/mdm.xml ] || [ -n "$REGISTER_WHEN_MDM_EXISTS" ]; then
         warp-cli registration new && echo "Warp client registered!"
+        warp-cli tunnel protocol set MASQUE && echo "Warp tunnel protocol set to MASQUE!"
         # if a license key is provided, register the license
         if [ -n "$WARP_LICENSE_KEY" ]; then
             echo "License key found, registering license..."
