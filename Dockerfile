@@ -1,9 +1,9 @@
 FROM ubuntu:22.04
 
-ARG WARP_VERSION
-ARG GOST_VERSION
+ARG WARP_VERSION=2025.4.929.0
+ARG GOST_VERSION=2.12.0
 ARG COMMIT_SHA
-ARG TARGETPLATFORM
+ARG TARGETPLATFORM=linux/amd64
 
 LABEL org.opencontainers.image.authors="cmj2002"
 LABEL org.opencontainers.image.url="https://github.com/cmj2002/warp-docker"
